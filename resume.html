@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ar. Dharshana Mittikayala — Architectural Curriculum Vitae | DigiDesk by D</title>
+
+  <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* -------------------------------------------------------------
+       RESET & BASE ARCHITECTURAL MONOGRAPH STYLING
+    ------------------------------------------------------------- */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: #fbfbfa;
+    }
+
+    body {
+      min-height: 100vh;
+      background-color: #fbfbfa;
+      color: #09090b;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.65;
+      user-select: text;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Architectural Studio Lighting */
+    .studio-bg {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at 50% 15%, #ffffff 0%, #fbfbfa 60%, #f2f2ef 100%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* Subtle Architectural Alignment Grid Background Line */
+    .studio-grid-overlay {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.015) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.015) 1px, transparent 1px);
+      background-size: 80px 80px;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* -------------------------------------------------------------
+       TYPOGRAPHY SPECIFICATION (EXACT SPEC MATCH)
+    ------------------------------------------------------------- */
+    .font-serif-hero {
+      font-family: 'Cormorant Garamond', Garamond, Georgia, serif;
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: -0.02em;
+      line-height: 0.95;
+      text-shadow: none;
+    }
+
+    .font-mono-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #71717a;
+    }
+
+    .font-body-copy {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 13px;
+      color: #52525b;
+      line-height: 1.65;
+    }
+
+    /* -------------------------------------------------------------
+       TOP NAVIGATION BAR
+    ------------------------------------------------------------- */
+    .top-nav {
+      position: sticky;
+      top: 18px;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav-pill-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 20px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid #e4e4e7;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+      color: #09090b;
+      text-decoration: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .nav-pill-back:hover {
+      background: #09090b;
+      color: #ffffff;
+      border-color: #09090b;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .nav-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 18px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid #e4e4e7;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #27272a;
+    }
+
+    .status-dot-emerald {
+      width: 6.5px;
+      height: 6.5px;
+      border-radius: 50%;
+      background-color: #10b981;
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+      animation: pulse 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.85); }
+    }
+
+    /* -------------------------------------------------------------
+       MAIN CV MONOGRAPH WRAPPER
+    ------------------------------------------------------------- */
+    .cv-container {
+      max-width: 980px;
+      margin: 36px auto 90px auto;
+      padding: 0 24px;
+    }
+
+    /* -------------------------------------------------------------
+       CARD DESIGN SYSTEM
+    ------------------------------------------------------------- */
+    .monograph-card {
+      background: #ffffff;
+      border: 1px solid #e4e4e7;
+      border-radius: 28px;
+      padding: 44px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    @media (min-width: 768px) {
+      .monograph-card {
+        padding: 52px 56px;
+      }
+    }
+
+    /* -------------------------------------------------------------
+       PROFILE HEADER SECTION
+    ------------------------------------------------------------- */
+    .profile-card {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .profile-hero-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .profile-identity-lockup {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .profile-avatar-frame {
+      position: relative;
+      width: 108px;
+      height: 108px;
+      flex-shrink: 0;
+    }
+
+    .profile-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ffffff;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    .avatar-ring-subtle {
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      pointer-events: none;
+    }
+
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .credentials-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      color: #047857;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      width: fit-content;
+      margin-bottom: 2px;
+    }
+
+    .profile-name {
+      font-size: 58px;
+      color: #09090b;
+      margin-left: -3px;
+    }
+
+    @media (min-width: 768px) {
+      .profile-name {
+        font-size: 78px;
+      }
+    }
+
+    .profile-subtitle {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #52525b;
+      font-weight: 500;
+      max-width: 620px;
+      line-height: 1.5;
+    }
+
+    /* Links & Buttons Lockup */
+    .profile-links-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding-top: 24px;
+      border-top: 1px solid #e4e4e7;
+    }
+
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border-radius: 9999px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid #e4e4e7;
+      background: #ffffff;
+      color: #18181b;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-pill:hover {
+      background: #09090b;
+      color: #ffffff;
+      border-color: #09090b;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-pill-primary {
+      background: #09090b;
+      color: #ffffff;
+      border-color: #09090b;
+    }
+
+    .btn-pill-primary:hover {
+      background: #27272a;
+      border-color: #27272a;
+    }
+
+    /* -------------------------------------------------------------
+       SECTION HEADERS
+    ------------------------------------------------------------- */
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      border-bottom: 1px solid #e4e4e7;
+      padding-bottom: 16px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .section-heading-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .section-num-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #a1a1aa;
+      font-weight: 500;
+    }
+
+    .section-title {
+      font-size: 38px;
+      color: #09090b;
+    }
+
+    /* -------------------------------------------------------------
+       TIMELINE & EXPERIENCE SPECIFICATION
+    ------------------------------------------------------------- */
+    .timeline-container {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      position: relative;
+    }
+
+    .timeline-item {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-left: 1.5px solid #e4e4e7;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .timeline-marker {
+      position: absolute;
+      left: -5.5px;
+      top: 5px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #09090b;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 0 1px #e4e4e7;
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .firm-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #09090b;
+    }
+
+    .location-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.15em;
+      color: #71717a;
+      text-transform: uppercase;
+    }
+
+    .role-title-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .role-title {
+      font-family: 'Cormorant Garamond', Garamond, Georgia, serif;
+      font-size: 24px;
+      font-style: italic;
+      color: #18181b;
+      line-height: 1;
+    }
+
+    .date-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: #52525b;
+      background: #f4f4f5;
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid #e4e4e7;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .exp-bullets li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 13px;
+      color: #52525b;
+      line-height: 1.65;
+    }
+
+    .exp-bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #a1a1aa;
+    }
+
+    .exp-bullets strong {
+      color: #09090b;
+      font-weight: 600;
+    }
+
+    /* -------------------------------------------------------------
+       ACADEMIC CREDENTIALS SPECIFICATION
+    ------------------------------------------------------------- */
+    .academic-list {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .academic-item {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-left: 1.5px solid #e4e4e7;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .academic-item::before {
+      content: '';
+      position: absolute;
+      left: -5.5px;
+      top: 5px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #09090b;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 0 1px #e4e4e7;
+    }
+
+    .institution-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #09090b;
+    }
+
+    .degree-name {
+      font-family: 'Cormorant Garamond', Garamond, Georgia, serif;
+      font-size: 26px;
+      font-style: italic;
+      color: #18181b;
+      line-height: 1.1;
+    }
+
+    .outbound-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #09090b;
+      text-decoration: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      background: rgba(9, 9, 11, 0.04);
+      border: 1px solid rgba(9, 9, 11, 0.1);
+      border-radius: 9999px;
+      width: fit-content;
+      transition: all 0.2s ease;
+      margin-top: 4px;
+    }
+
+    .outbound-link:hover {
+      background: #09090b;
+      color: #ffffff;
+      border-color: #09090b;
+      transform: translateX(2px);
+    }
+
+    /* -------------------------------------------------------------
+       CORE COMPETENCIES & CREDENTIALS GRID (4 BLOCKS)
+    ------------------------------------------------------------- */
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .credentials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .competency-card {
+      background: #fbfbfa;
+      border: 1px solid #e4e4e7;
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .competency-card:hover {
+      background: #ffffff;
+      border-color: #a1a1aa;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .competency-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #71717a;
+      font-weight: 600;
+    }
+
+    .competency-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #09090b;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .competency-desc {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 12.5px;
+      color: #52525b;
+      line-height: 1.6;
+    }
+
+    .skill-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .skill-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: #ffffff;
+      color: #27272a;
+      border: 1px solid #e4e4e7;
+    }
+
+    /* -------------------------------------------------------------
+       FOOTER
+    ------------------------------------------------------------- */
+    .cv-footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 30px 20px;
+      border-top: 1px solid #e4e4e7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Simplified Open Floating Architectural Converter (Bottom-Right) */
+    #simple-arch-converter {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 45;
+      width: 292px;
+      max-width: calc(100vw - 36px);
+      border-radius: 20px;
+      padding: 13px 15px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.05);
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      user-select: none;
+    }
+
+    @media (max-width: 640px) {
+      #simple-arch-converter {
+        right: 12px;
+        bottom: 12px;
+        width: calc(100vw - 24px);
+        max-width: 320px;
+      }
+    }
+
+    /* -------------------------------------------------------------
+       PRINT STYLESHEET (CLEAN EDITORIAL PDF OUTPUT)
+    ------------------------------------------------------------- */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+      .studio-bg, .studio-grid-overlay, .top-nav, .profile-links-row, .cv-footer, #simple-arch-converter {
+        display: none !important;
+      }
+      .cv-container {
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+      .monograph-card {
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 16px 0 !important;
+        page-break-inside: avoid;
+        margin-bottom: 20px !important;
+      }
+      .competency-card {
+        background: none !important;
+        border: 1px solid #d4d4d8 !important;
+        page-break-inside: avoid;
+      }
+      .outbound-link {
+        border: none !important;
+        padding: 0 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Studio Background Lighting & Alignment Grid -->
+  <div class="studio-bg"></div>
+  <div class="studio-grid-overlay"></div>
+
+  <!-- Top Floating Navigation Bar -->
+  <nav class="top-nav">
+    <a href="index.html" class="nav-pill-back">
+      <span>←</span>
+      <span>Back to DigiDesk</span>
+    </a>
+
+    <div class="nav-status-badge">
+      <span class="status-dot-emerald"></span>
+      <span>Assoc. AIA // LEED® Green Associate™</span>
+    </div>
+  </nav>
+
+  <!-- Main CV Monograph Container -->
+  <main class="cv-container">
+
+    <!-- Profile Header Section -->
+    <header class="monograph-card profile-card">
+      <div class="profile-hero-row">
+        <div class="profile-identity-lockup">
+          <div class="profile-avatar-frame">
+            <img src="avatar_square.webp" alt="Ar. Dharshana Mittikayala" class="profile-avatar" />
+            <div class="avatar-ring-subtle"></div>
+          </div>
+
+          <div class="profile-info">
+            <span class="credentials-badge-tag">Assoc. AIA • LEED® Green Associate™</span>
+            <h1 class="font-serif-hero profile-name">Ar. Dharshana Mittikayala</h1>
+            <p class="profile-subtitle">Project Designer & Founder of DigiDesk by D // New York City Metropolitan Area</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Outbound Portfolio & Profile Links -->
+      <div class="profile-links-row">
+        <a href="https://dmportfolio11.my.canva.site/" target="_blank" rel="noopener noreferrer" class="btn-pill btn-pill-primary">
+          <svg style="width: 13px; height: 13px; fill: currentColor;" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+          </svg>
+          <span>Canva Web Portfolio ↗</span>
+        </a>
+
+        <a href="https://issuu.com/dharshanamittikayala/docs/portfolio-dharshana_mittikayala" target="_blank" rel="noopener noreferrer" class="btn-pill">
+          <svg style="width: 13px; height: 13px; fill: currentColor;" viewBox="0 0 24 24">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+          </svg>
+          <span>Issuu Portfolio Book ↗</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/dharshanamittikayala/" target="_blank" rel="noopener noreferrer" class="btn-pill">
+          <svg style="width: 13px; height: 13px; fill: currentColor;" viewBox="0 0 24 24">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 0 0 0-2.9 1.45 1.45 0 0 0 0 2.9m1.4 9.74v-8.37H5.06v8.37h2.8z"/>
+          </svg>
+          <span>LinkedIn ↗</span>
+        </a>
+
+        <button onclick="window.print()" class="btn-pill" style="margin-left: auto;">
+          <svg style="width: 13px; height: 13px; fill: currentColor;" viewBox="0 0 24 24">
+            <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+          </svg>
+          <span>Print / PDF</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- 01 // Profile & Praxis -->
+    <section class="monograph-card">
+      <div class="section-header">
+        <div class="section-heading-group">
+          <span class="section-num-tag">01 // Architectural Focus</span>
+          <h2 class="font-serif-hero section-title">Profile & Praxis</h2>
+        </div>
+        <span class="font-mono-meta">SUSTAINABLE ARCHITECTURE // DIGITAL MENTORSHIP</span>
+      </div>
+
+      <p class="font-body-copy" style="font-size: 13.5px; color: #3f3f46; max-width: 860px;">
+        Architectural Project Designer merging academic research with high-performance practical execution. Specializing in sustainable design, green building envelope strategies, zoning analyses, and meticulous construction documentation. Founder of <strong style="color: #09090b;">DigiDesk by D</strong>, an interactive mentorship co-pilot guiding emerging international architects into US codes, imperial drawing sets, and professional practice.
+      </p>
+    </section>
+
+    <!-- 02 // Professional Experience -->
+    <section class="monograph-card">
+      <div class="section-header">
+        <div class="section-heading-group">
+          <span class="section-num-tag">02 // Industry Track Record</span>
+          <h2 class="font-serif-hero section-title">Professional Experience</h2>
+        </div>
+        <span class="font-mono-meta">USA & INTERNATIONAL PRACTICE</span>
+      </div>
+
+      <div class="timeline-container">
+
+        <!-- 1. Solutions Architecture Corp -->
+        <article class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-header">
+            <div>
+              <h3 class="firm-name">Solutions Architecture Corp</h3>
+              <div class="role-title-row">
+                <span class="role-title">Project Designer</span>
+                <span class="date-badge">Feb 2025 – Present</span>
+                <span style="color: #a1a1aa; font-size: 12px;">|</span>
+                <span class="role-title" style="font-size: 21px;">Architectural Intern</span>
+                <span class="date-badge">Sep 2024 – Feb 2025</span>
+              </div>
+            </div>
+            <span class="location-tag">Verona, NJ & Newark, NJ</span>
+          </div>
+
+          <ul class="exp-bullets">
+            <li>Direct translation of academic insights into civic, public, and educational built solutions.</li>
+            <li>Comprehensive construction documentation (CD) drawing packages and zoning compliance.</li>
+            <li>ADA (ICC A117.1) accessibility audits and IBC Chapter 10 egress reviews.</li>
+            <li>Cross-disciplinary Revit BIM model coordination.</li>
+          </ul>
+        </article>
+
+        <!-- 2. Mistry Design LLC -->
+        <article class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-header">
+            <div>
+              <h3 class="firm-name">Mistry Design LLC</h3>
+              <div class="role-title-row">
+                <span class="role-title">Architectural Intern</span>
+                <span class="date-badge">Jun 2024 – Sep 2024</span>
+              </div>
+            </div>
+            <span class="location-tag">New Jersey, USA</span>
+          </div>
+
+          <ul class="exp-bullets">
+            <li>Fused creative design with precise drafting, 3D spatial modeling, and project management workflows.</li>
+          </ul>
+        </article>
+
+        <!-- 3. Freelance Architect -->
+        <article class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-header">
+            <div>
+              <h3 class="firm-name">Freelance Architect</h3>
+              <div class="role-title-row">
+                <span class="role-title">Architect</span>
+                <span class="date-badge">Jan 2023 – Jun 2024</span>
+              </div>
+            </div>
+            <span class="location-tag">Hyderabad, Telangana, India & International</span>
+          </div>
+
+          <ul class="exp-bullets">
+            <li>Custom spatial designs, residential schemes, client design briefs, and visualization packages.</li>
+          </ul>
+        </article>
+
+        <!-- 4. Prime Focus Interiors -->
+        <article class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-header">
+            <div>
+              <h3 class="firm-name">Prime Focus Interiors</h3>
+              <div class="role-title-row">
+                <span class="role-title">Lead Architect</span>
+                <span class="date-badge">2022 – 2023</span>
+              </div>
+            </div>
+            <span class="location-tag">India</span>
+          </div>
+
+          <ul class="exp-bullets">
+            <li>Lead architect overseeing 3 major commercial developments and 2 renovation projects.</li>
+            <li>Delivered complete Good-for-Construction (GFC) sets; managed client presentations and on-site execution.</li>
+          </ul>
+        </article>
+
+        <!-- 5. Sandarbh Design Studios -->
+        <article class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-header">
+            <div>
+              <h3 class="firm-name">Sandarbh Design Studios</h3>
+              <div class="role-title-row">
+                <span class="role-title">Architectural Intern</span>
+                <span class="date-badge">Jan 2022 – May 2022</span>
+              </div>
+            </div>
+            <span class="location-tag">India</span>
+          </div>
+
+          <ul class="exp-bullets">
+            <li>Assisted senior architects with construction documentation, site visits, and photorealistic 3D visualization.</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 03 // Academic Credentials -->
+    <section class="monograph-card">
+      <div class="section-header">
+        <div class="section-heading-group">
+          <span class="section-num-tag">03 // Academic Credentials</span>
+          <h2 class="font-serif-hero section-title">Education</h2>
+        </div>
+        <span class="font-mono-meta">NEWARK, NJ & JAIPUR, INDIA</span>
+      </div>
+
+      <div class="academic-list">
+
+        <!-- NJIT -->
+        <article class="academic-item">
+          <div class="timeline-header">
+            <div>
+              <h3 class="institution-name">New Jersey Institute of Technology (NJIT)</h3>
+              <p class="font-mono-meta" style="color: #71717a; margin-top: 2px;">Hillier College of Architecture and Design</p>
+              <h4 class="degree-name" style="margin-top: 4px;">Master of Science in Architecture (MS ARCH)</h4>
+            </div>
+            <div style="text-align: right;">
+              <span class="location-tag">Newark, NJ</span>
+              <div class="date-badge" style="margin-top: 4px;">Aug 2023 – Sep 2025</div>
+            </div>
+          </div>
+
+          <p class="font-body-copy" style="margin-top: 6px;">
+            Advanced focus on computational design, building performance analysis, and sustainable envelope integration.
+          </p>
+
+          <a href="https://design.njit.edu/master-science-architecture" target="_blank" rel="noopener noreferrer" class="outbound-link">
+            <span>NJIT MS Architecture Program Page</span>
+            <span style="font-size: 13px;">↗</span>
+          </a>
+        </article>
+
+        <!-- MNIT Jaipur -->
+        <article class="academic-item">
+          <div class="timeline-header">
+            <div>
+              <h3 class="institution-name">Malaviya National Institute of Technology (MNIT) Jaipur</h3>
+              <h4 class="degree-name" style="margin-top: 4px;">Bachelor of Architecture (B.Arch)</h4>
+            </div>
+            <div style="text-align: right;">
+              <span class="location-tag">Jaipur, India</span>
+              <div class="date-badge" style="margin-top: 4px;">2017 – 2022</div>
+            </div>
+          </div>
+
+          <p class="font-body-copy" style="margin-top: 6px;">
+            5-year accredited architecture program covering studio design, structural systems, building services, and construction assemblies.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 04 // Core Competencies & Credentials Grid -->
+    <section class="monograph-card">
+      <div class="section-header">
+        <div class="section-heading-group">
+          <span class="section-num-tag">04 // Core Competencies & Credentials</span>
+          <h2 class="font-serif-hero section-title">Credentials & Arsenal</h2>
+        </div>
+        <span class="font-mono-meta">4 STRATEGIC DOMAINS</span>
+      </div>
+
+      <div class="credentials-grid">
+
+        <!-- 1. Sustainability & Performance -->
+        <div class="competency-card">
+          <span class="competency-badge">DOMAIN 01 // ACCREDITATION</span>
+          <h4 class="competency-title">
+            <span>🌱</span>
+            <span>Sustainability & Performance</span>
+          </h4>
+          <p class="competency-desc">
+            Rigorous environmental design methodologies prioritizing decarbonization, building performance analysis, and green envelope strategies.
+          </p>
+          <div class="skill-pills-row">
+            <span class="skill-pill">LEED® Green Associate™</span>
+            <span class="skill-pill">Green Building</span>
+            <span class="skill-pill">Building Performance Analysis</span>
+          </div>
+        </div>
+
+        <!-- 2. Professional Affiliations -->
+        <div class="competency-card">
+          <span class="competency-badge">DOMAIN 02 // PROFESSIONAL BODY</span>
+          <h4 class="competency-title">
+            <span>🏛️</span>
+            <span>Professional Affiliations</span>
+          </h4>
+          <p class="competency-desc">
+            Active professional standing in leading American architectural institutes, advancing studio culture, mentorship, and professional ethics.
+          </p>
+          <div class="skill-pills-row">
+            <span class="skill-pill">Associate AIA (Assoc. AIA)</span>
+            <span class="skill-pill">American Institute of Architects</span>
+          </div>
+        </div>
+
+        <!-- 3. Documentation & Codes -->
+        <div class="competency-card">
+          <span class="competency-badge">DOMAIN 03 // TECHNICAL STANDARDS</span>
+          <h4 class="competency-title">
+            <span>📐</span>
+            <span>Documentation & Codes</span>
+          </h4>
+          <p class="competency-desc">
+            High-precision production of permit and construction drawing packages with rigorous code verification for life safety and accessible design.
+          </p>
+          <div class="skill-pills-row">
+            <span class="skill-pill">Construction Documents (CD/GFC)</span>
+            <span class="skill-pill">IBC Chapter 10 (Egress)</span>
+            <span class="skill-pill">IBC Chapter 11 (Accessibility)</span>
+            <span class="skill-pill">ADA / ICC A117.1</span>
+          </div>
+        </div>
+
+        <!-- 4. BIM & Drafting Arsenal -->
+        <div class="competency-card">
+          <span class="competency-badge">DOMAIN 04 // SOFTWARE SYSTEMS</span>
+          <h4 class="competency-title">
+            <span>💻</span>
+            <span>BIM & Drafting Arsenal</span>
+          </h4>
+          <p class="competency-desc">
+            Advanced computational authoring, worksharing, multi-disciplinary clash coordination, and studio quality control review sessions.
+          </p>
+          <div class="skill-pills-row">
+            <span class="skill-pill">Autodesk Revit</span>
+            <span class="skill-pill">AutoCAD Architecture</span>
+            <span class="skill-pill">3D Spatial Modeling</span>
+            <span class="skill-pill">Bluebeam Revu</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="cv-footer">
+      <a href="index.html" class="nav-pill-back">
+        <span>←</span>
+        <span>Return to DigiDesk by D</span>
+      </a>
+      <p class="font-mono-meta" style="margin-top: 8px;">
+        Ar. Dharshana Mittikayala, Assoc. AIA, LEED® Green Associate™ // Solutions Architecture Corp
+      </p>
+      <p style="font-size: 11px; color: #a1a1aa;">
+        © 2026 DigiDesk by D. All architectural rights reserved.
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- Simplified Open Floating Architectural Converter (Bottom-Right) -->
+  <aside id="simple-arch-converter" aria-label="Architectural Unit & Lumber Converter">
+    <!-- Header with status & Mode Toggle -->
+    <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(0, 0, 0, 0.06); padding-bottom: 8px;">
+      <div style="display: flex; align-items: center; gap: 6px;">
+        <span class="status-dot-emerald" style="width: 5px; height: 5px;"></span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #09090b;">
+          ARCH CONVERTER
+        </span>
+      </div>
+      <button id="simple-mode-toggle" style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; font-weight: 600; letter-spacing: 0.06em; padding: 3px 8px; border-radius: 9999px; background: #09090b; color: #ffffff; border: none; cursor: pointer; display: flex; align-items: center; gap: 4px;" title="Switch conversion direction">
+        <span id="simple-mode-label">mm → ft-in</span>
+        <span style="opacity: 0.7;">⇄</span>
+      </button>
+    </div>
+
+    <!-- Mode A: Millimeters Input -->
+    <div id="simple-input-container-a" style="display: flex; flex-direction: column; gap: 6px;">
+      <div style="display: flex; align-items: center; gap: 5px;">
+        <div style="position: relative; flex: 1;">
+          <input type="number" id="simple-input-mm" value="2400" min="0" step="any" style="width: 100%; box-sizing: border-box; padding: 7px 30px 7px 10px; border-radius: 10px; border: 1px solid #d4d4d8; background: #fafafa; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; color: #09090b; outline: none;" placeholder="2400" />
+          <span style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); font-family: 'JetBrains Mono', monospace; font-size: 9px; color: #a1a1aa; pointer-events: none;">mm</span>
+        </div>
+        <div style="display: flex; gap: 3px;">
+          <button class="simple-quick-val" data-val="900" style="padding: 6px 7px; border-radius: 8px; border: 1px solid #e4e4e7; background: #ffffff; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: #52525b; cursor: pointer;" title="900mm (Standard door opening)">900</button>
+          <button class="simple-quick-val" data-val="2400" style="padding: 6px 7px; border-radius: 8px; border: 1px solid #e4e4e7; background: #ffffff; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: #52525b; cursor: pointer;" title="2400mm (8ft ceiling height)">2400</button>
+          <button class="simple-quick-val" data-val="3000" style="padding: 6px 7px; border-radius: 8px; border: 1px solid #e4e4e7; background: #ffffff; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: #52525b; cursor: pointer;" title="3000mm (10ft ceiling height)">3000</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mode B: Feet & Inches Input -->
+    <div id="simple-input-container-b" style="display: none; align-items: center; gap: 5px;">
+      <div style="position: relative; flex: 1;">
+        <input type="number" id="simple-input-feet" value="7" min="0" step="1" style="width: 100%; box-sizing: border-box; padding: 7px 20px 7px 8px; border-radius: 10px; border: 1px solid #d4d4d8; background: #fafafa; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; color: #09090b; outline: none;" placeholder="7" />
+        <span style="position: absolute; right: 6px; top: 50%; transform: translateY(-50%); font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: #a1a1aa; pointer-events: none;">ft</span>
+      </div>
+      <div style="position: relative; flex: 1;">
+        <input type="number" id="simple-input-inches" value="10" min="0" max="11" step="1" style="width: 100%; box-sizing: border-box; padding: 7px 20px 7px 8px; border-radius: 10px; border: 1px solid #d4d4d8; background: #fafafa; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; color: #09090b; outline: none;" placeholder="10" />
+        <span style="position: absolute; right: 6px; top: 50%; transform: translateY(-50%); font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: #a1a1aa; pointer-events: none;">in</span>
+      </div>
+      <select id="simple-input-frac" style="flex: 1.1; padding: 7px 2px; border-radius: 10px; border: 1px solid #d4d4d8; background: #fafafa; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: #09090b; outline: none; cursor: pointer;">
+        <option value="0">0"</option>
+        <option value="0.0625">1/16"</option>
+        <option value="0.125">1/8"</option>
+        <option value="0.1875">3/16"</option>
+        <option value="0.25">1/4"</option>
+        <option value="0.3125">5/16"</option>
+        <option value="0.375">3/8"</option>
+        <option value="0.4375">7/16"</option>
+        <option value="0.5" selected>1/2"</option>
+        <option value="0.5625">9/16"</option>
+        <option value="0.625">5/8"</option>
+        <option value="0.6875">11/16"</option>
+        <option value="0.75">3/4"</option>
+        <option value="0.8125">13/16"</option>
+        <option value="0.875">7/8"</option>
+        <option value="0.9375">15/16"</option>
+      </select>
+    </div>
+
+    <!-- Emerald Readout Display Card -->
+    <div style="background: #09090b; border-radius: 12px; padding: 9px 12px; position: relative; overflow: hidden; border: 1px solid rgba(16, 185, 129, 0.4); box-shadow: 0 4px 14px rgba(0,0,0,0.12);">
+      <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #10b981, #059669, #10b981);"></div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+        <span id="simple-readout-title" style="font-family: 'JetBrains Mono', monospace; font-size: 8.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #10b981;">
+          US ARCH (±1/16")
+        </span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 8px; color: #71717a;">ACTIVE</span>
+      </div>
+      <div id="simple-readout-main" style="font-family: 'JetBrains Mono', monospace; font-size: 19px; font-weight: 700; color: #ffffff; letter-spacing: -0.01em; line-height: 1.2;">
+        7'-10 1/2"
+      </div>
+      <div id="simple-readout-sub" style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: #a1a1aa; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+        94.49" • 7.874' • 2.400 m
+      </div>
+    </div>
+
+    <!-- US Nominal Lumber Quick Bar -->
+    <div style="border-top: 1px solid rgba(0, 0, 0, 0.06); padding-top: 7px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 8.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #71717a;">
+          NOMINAL LUMBER
+        </span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 8px; color: #a1a1aa;">ACTUAL S4S</span>
+      </div>
+      <div style="display: flex; gap: 3px; justify-content: space-between;">
+        <button class="simple-lumber-btn" data-lumber="2x4" style="flex: 1; padding: 4px 0; border-radius: 6px; border: 1px solid #09090b; background: #09090b; color: #ffffff; font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 600; cursor: pointer; text-align: center;">2×4</button>
+        <button class="simple-lumber-btn" data-lumber="2x6" style="flex: 1; padding: 4px 0; border-radius: 6px; border: 1px solid #e4e4e7; background: #ffffff; color: #09090b; font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 600; cursor: pointer; text-align: center;">2×6</button>
+        <button class="simple-lumber-btn" data-lumber="2x8" style="flex: 1; padding: 4px 0; border-radius: 6px; border: 1px solid #e4e4e7; background: #ffffff; color: #09090b; font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 600; cursor: pointer; text-align: center;">2×8</button>
+        <button class="simple-lumber-btn" data-lumber="2x10" style="flex: 1; padding: 4px 0; border-radius: 6px; border: 1px solid #e4e4e7; background: #ffffff; color: #09090b; font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 600; cursor: pointer; text-align: center;">2×10</button>
+        <button class="simple-lumber-btn" data-lumber="2x12" style="flex: 1; padding: 4px 0; border-radius: 6px; border: 1px solid #e4e4e7; background: #ffffff; color: #09090b; font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 600; cursor: pointer; text-align: center;">2×12</button>
+        <button class="simple-lumber-btn" data-lumber="4x4" style="flex: 1; padding: 4px 0; border-radius: 6px; border: 1px solid #e4e4e7; background: #ffffff; color: #09090b; font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 600; cursor: pointer; text-align: center;">4×4</button>
+      </div>
+      <div id="simple-lumber-readout" style="margin-top: 6px; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: #27272a; background: #f4f4f5; padding: 5px 8px; border-radius: 6px; text-align: center; border: 1px solid #e4e4e7;">
+        <strong>2×4 Actual:</strong> 1-1/2" × 3-1/2" (38×89mm)
+      </div>
+    </div>
+  </aside>
+
+  <script>
+    (function() {
+      // --- SIMPLIFIED OPEN ARCHITECTURAL CONVERTER CONTROLLER (BOTTOM-RIGHT) ---
+      const simpleModeToggle = document.getElementById('simple-mode-toggle');
+      const simpleModeLabel = document.getElementById('simple-mode-label');
+      const simpleInputContainerA = document.getElementById('simple-input-container-a');
+      const simpleInputContainerB = document.getElementById('simple-input-container-b');
+
+      const simpleInputMm = document.getElementById('simple-input-mm');
+      const simpleInputFeet = document.getElementById('simple-input-feet');
+      const simpleInputInches = document.getElementById('simple-input-inches');
+      const simpleInputFrac = document.getElementById('simple-input-frac');
+
+      const simpleReadoutTitle = document.getElementById('simple-readout-title');
+      const simpleReadoutMain = document.getElementById('simple-readout-main');
+      const simpleReadoutSub = document.getElementById('simple-readout-sub');
+      const simpleLumberReadout = document.getElementById('simple-lumber-readout');
+
+      let simpleCurrentMode = 'A'; // 'A' (mm -> imperial) or 'B' (imperial -> mm)
+
+      function gcd(a, b) {
+        return b === 0 ? a : gcd(b, a % b);
+      }
+
+      function mmToImperialArch(mm) {
+        if (isNaN(mm) || mm < 0) {
+          return { primary: '0"', secondary: '0.00" Decimal • 0.000 Ft • 0.000 m' };
+        }
+        const totalInches = mm / 25.4;
+        let feet = Math.floor(totalInches / 12);
+        let remInches = totalInches - (feet * 12);
+        let wholeInches = Math.floor(remInches);
+        let fraction = remInches - wholeInches;
+
+        let sixteenths = Math.round(fraction * 16);
+        if (sixteenths === 16) {
+          wholeInches += 1;
+          sixteenths = 0;
+          if (wholeInches === 12) {
+            feet += 1;
+            wholeInches = 0;
+          }
+        }
+
+        let fracStr = '';
+        if (sixteenths > 0) {
+          const d = gcd(sixteenths, 16);
+          fracStr = `${sixteenths / d}/${16 / d}`;
+        }
+
+        let primary = '';
+        if (feet === 0 && wholeInches === 0 && fracStr === '') {
+          primary = '0"';
+        } else if (feet === 0) {
+          primary = wholeInches > 0 
+            ? (fracStr ? `${wholeInches} ${fracStr}"` : `${wholeInches}"`)
+            : `${fracStr}"`;
+        } else {
+          let inchPart = wholeInches > 0 
+            ? (fracStr ? `${wholeInches} ${fracStr}"` : `${wholeInches}"`)
+            : (fracStr ? `0 ${fracStr}"` : '0"');
+          primary = `${feet}'-${inchPart}`;
+        }
+
+        const decInches = totalInches.toFixed(2);
+        const decFeet = (totalInches / 12).toFixed(3);
+        const meters = (mm / 1000).toFixed(3);
+        const secondary = `${decInches}" Decimal • ${decFeet} Ft Decimal • ${meters} m Metric`;
+
+        return { primary, secondary };
+      }
+
+      function imperialToMetricArch(feet, inches, fracDec) {
+        feet = parseFloat(feet) || 0;
+        inches = parseFloat(inches) || 0;
+        fracDec = parseFloat(fracDec) || 0;
+
+        const totalInches = (feet * 12) + inches + fracDec;
+        const mm = Math.round(totalInches * 25.4);
+        const meters = (mm / 1000).toFixed(3);
+        const primary = `${mm.toLocaleString()} mm`;
+        const secondary = `${meters} m Metric • ${totalInches.toFixed(2)}" Decimal Inches • ${(totalInches / 12).toFixed(3)} Ft Decimal`;
+
+        return { primary, secondary };
+      }
+
+      function updateSimpleConverter() {
+        if (simpleCurrentMode === 'A') {
+          const val = parseFloat(simpleInputMm.value);
+          const res = mmToImperialArch(val);
+          if (simpleReadoutTitle) simpleReadoutTitle.textContent = 'US ARCH (±1/16")';
+          if (simpleReadoutMain) simpleReadoutMain.textContent = res.primary;
+          if (simpleReadoutSub) simpleReadoutSub.textContent = res.secondary;
+        } else {
+          const feet = simpleInputFeet.value;
+          const inches = simpleInputInches.value;
+          const frac = simpleInputFrac.value;
+          const res = imperialToMetricArch(feet, inches, frac);
+          if (simpleReadoutTitle) simpleReadoutTitle.textContent = 'METRIC CALLOUT';
+          if (simpleReadoutMain) simpleReadoutMain.textContent = res.primary;
+          if (simpleReadoutSub) simpleReadoutSub.textContent = res.secondary;
+        }
+      }
+
+      if (simpleModeToggle) {
+        simpleModeToggle.addEventListener('click', () => {
+          if (simpleCurrentMode === 'A') {
+            simpleCurrentMode = 'B';
+            simpleModeLabel.textContent = 'ft-in → mm';
+            simpleInputContainerA.style.display = 'none';
+            simpleInputContainerB.style.display = 'flex';
+          } else {
+            simpleCurrentMode = 'A';
+            simpleModeLabel.textContent = 'mm → ft-in';
+            simpleInputContainerB.style.display = 'none';
+            simpleInputContainerA.style.display = 'flex';
+          }
+          updateSimpleConverter();
+        });
+      }
+
+      if (simpleInputMm) simpleInputMm.addEventListener('input', updateSimpleConverter);
+      if (simpleInputFeet) simpleInputFeet.addEventListener('input', updateSimpleConverter);
+      if (simpleInputInches) simpleInputInches.addEventListener('input', updateSimpleConverter);
+      if (simpleInputFrac) simpleInputFrac.addEventListener('change', updateSimpleConverter);
+
+      document.querySelectorAll('.simple-quick-val').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (simpleInputMm) {
+            simpleInputMm.value = btn.getAttribute('data-val');
+            updateSimpleConverter();
+          }
+        });
+      });
+
+      const LUMBER_DATA = {
+        '2x4': { label: '2×4', actual: '1-1/2" × 3-1/2"', metric: '38×89mm' },
+        '2x6': { label: '2×6', actual: '1-1/2" × 5-1/2"', metric: '38×140mm' },
+        '2x8': { label: '2×8', actual: '1-1/2" × 7-1/4"', metric: '38×184mm' },
+        '2x10': { label: '2×10', actual: '1-1/2" × 9-1/4"', metric: '38×235mm' },
+        '2x12': { label: '2×12', actual: '1-1/2" × 11-1/4"', metric: '38×286mm' },
+        '4x4': { label: '4×4', actual: '3-1/2" × 3-1/2"', metric: '89×89mm' }
+      };
+
+      document.querySelectorAll('.simple-lumber-btn').forEach(pill => {
+        pill.addEventListener('click', () => {
+          document.querySelectorAll('.simple-lumber-btn').forEach(p => {
+            p.style.background = '#ffffff';
+            p.style.color = '#09090b';
+            p.style.borderColor = '#e4e4e7';
+          });
+          pill.style.background = '#09090b';
+          pill.style.color = '#ffffff';
+          pill.style.borderColor = '#09090b';
+
+          const key = pill.getAttribute('data-lumber');
+          const data = LUMBER_DATA[key];
+          if (data && simpleLumberReadout) {
+            simpleLumberReadout.innerHTML = `<strong>${data.label} Actual:</strong> ${data.actual} (${data.metric})`;
+          }
+        });
+      });
+
+      updateSimpleConverter();
+    })();
+  </script>
+</body>
+</html>
